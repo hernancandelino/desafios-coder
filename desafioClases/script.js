@@ -10,7 +10,7 @@ class ProductManager {
         stock = this.stock;
     }
     addProduct (code, producto) {
-        if (ProductManager.products.find((el) => el.code !== code) == undefined && producto.title != undefined && producto.description != undefined && producto.price != undefined && producto.thumbnail != undefined && producto.code != undefined && producto.stock != undefined) {
+        if (ProductManager.products.find((el) => el.code === code) == undefined || producto.title != undefined || producto.description != undefined || producto.price != undefined || producto.thumbnail != undefined || producto.code != undefined || producto.stock != undefined) {
             producto.code++
             ProductManager.products.push(producto)
             console.log(ProductManager.products)
